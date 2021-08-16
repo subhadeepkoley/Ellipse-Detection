@@ -17,7 +17,7 @@ import random
 import numpy as np
 
 #// Mention your CSV file path here
-annotationLocation = 'C:/Users/SUBHADEEP/Desktop/Ellipse Detection/Final_New/GT_Labels.csv'
+annotationLocation = '/data/GT_Labels.csv'
 
 #// Read the CSV file
 annotationFile = pd.read_csv(annotationLocation)
