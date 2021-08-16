@@ -11,10 +11,11 @@ Rotation angle: 0 Degree
 Annotation file: GT_Labels.csv
 Annotation parameters: Origin points of the ellipse (x0, y0), semi-axes lengths (semiAx1, semiAx2), rotation angle (rotAngle)
 
-Directory Structure:
+Directory Structure (after unzipping):
 	- GT_Labels.csv
 	- GT_Labels.mat
 	- readme.txt
+	- images.rar
 	- img0001.png
 	- img0002.png
 	- img0003.png
