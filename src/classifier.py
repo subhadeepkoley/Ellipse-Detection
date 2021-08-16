@@ -89,18 +89,15 @@ def classifier_layer(baseLayers, inputROI, numROI, nbClasses = 2):
     poolingRegions = 7
     outROIPool = RoiPoolingConv(poolingRegions, numROI)([baseLayers, inputROI])
 
-    # Flatten the convlutional layer and connected to 2 FC and 2 dropout
+    # // Flatten the convlutional layer and connect to FCs
     out = Flatten(name='flatten')(outROIPool)
     out = Dense(4096, activation='relu', name='fc1')(out)
     out = Dropout(0.5)(out)
     out = Dense(4096, activation='relu', name='fc2')(out)
     out = Dropout(0.5)(out)
 
-    # two output layer- classifier and regressor
-    # for classify the class name of the object
     out_class = Dense(nbClasses, activation='softmax', kernel_initializer='zero'), name='dense_class_{}'.format(nbClasses)(out)
     
-    #for coordinates regression
     out_regr = Dense(4 * (nbClasses-1), activation='linear', kernel_initializer='zero'), name='dense_regress_{}'.format(nbClasses)(out)
 
     return [out_class, out_regr]
